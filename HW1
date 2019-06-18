@@ -1,0 +1,23 @@
+CREATE TABLE intern(
+  id number not null PRIMARY KEY,
+  Ad varchar(20),
+  Soyad varchar(20),
+  Universite varchar(50),
+  Bolum varchar(50),
+  Sinif number,
+  Memleket varchar(20)
+);
+
+INSERT INTO intern VALUES(1,'Eren','Yalçın','Bilkent','Bilgisayar Mühendisliği', 3, 'Ankara');
+INSERT INTO intern VALUES(2,'Tolga','Çatalpınar','Bilkent','Bilgisayar Mühendisliği',2,'Ankara');
+INSERT INTO intern VALUES(3,'Ayşegül', 'Karahançer', 'Yıldız Teknik', 'Bilgisayar Öğretmenliği', 3, 'Kayseri');
+INSERT INTO intern VALUES(4,'Gizemnur', 'Taskin', 'Istanbul Teknik', 'Bilisim Mühendisliği', 3, 'Istanbul');
+INSERT INTO intern VALUES(5,'Melih', 'Doğrul', 'Yıldız Teknik','Bilgisayar Mühendisliği', 3, 'Trabzon');
+INSERT INTO intern VALUES(6,'Servet', 'Tartar', 'Munzur', 'Bilgisayar Mühendisliği', 4, 'Mersin');
+INSERT INTO intern VALUES(7,'Yunus', 'Arslan', 'ODTU', 'Bilgisayar Öğretmenliği', 2, 'Antalya');
+INSERT INTO intern VALUES(8,'Özge','Koç', 'Trakya', 'Bilgisayar Mühendisliği', 4, 'Afyonkarahisar');
+INSERT INTO intern VALUES(9,'Ümit', 'Atılgan','Yıldız Teknik','Matematik Mühendisliği',4,'Çorum');
+INSERT INTO intern VALUES(10,'Beytullah', 'Atik', 'Karabük', 'Bilgisayar Mühendisliği', 3 , 'Edirne');
+INSERT INTO intern VALUES(11,'Davut', 'Kurt', 'İnönü', 'Bilgisayar Mühendisliği', 4, 'Malatya');
+
+SELECT * FROM intern;
