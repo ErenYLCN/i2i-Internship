@@ -10,92 +10,114 @@ CREATE TABLE intern(
   hometown varchar(50)
 );
 
-INSERT INTO intern VALUES(1,
-                               'Eren',
-                               'Yalçın',
-                               'Bilkent University',
-                               'Computer Engineering',
-                               3,
-                               'Ankara');
+INSERT INTO intern VALUES(
+  1,                          
+  'Eren',
+  'Yalçın',
+  'Bilkent University',
+  'Computer Engineering',
+  3,
+  'Ankara'
+);
                                
-INSERT INTO intern VALUES(2,
-                               'Tolga',
-                               'Çatalpınar',
-                               'Bilkent University',
-                               'Computer Engineering',
-                               2,
-                               'Ankara');
+INSERT INTO intern VALUES(
+  2,
+  'Tolga',
+  'Çatalpınar',
+  'Bilkent University',
+  'Computer Engineering',
+  2,
+  'Ankara'
+);
                                
-INSERT INTO intern VALUES(3,
-                               'Ayşegül', 
-                               'Karahançer', 
-                               'Yıldız Teknik University', 
-                               'Computer Education', 
-                               3, 
-                               'Kayseri');
+INSERT INTO intern VALUES(
+  3,
+  'Ayşegül', 
+  'Karahançer', 
+  'Yıldız Teknik University', 
+  'Computer Education', 
+  3, 
+  'Kayseri'
+);
                                
-INSERT INTO intern VALUES(4,
-                               'Gizemnur', 
-                               'Taskin', 
-                               'Istanbul Teknik University', 
-                               'IT Engineering', 
-                               3, 
-                               'Istanbul');
+INSERT INTO intern VALUES(
+  4,
+  'Gizemnur', 
+  'Taskin', 
+  'Istanbul Teknik University', 
+  'IT Engineering', 
+  3, 
+  'Istanbul'
+);
                                
-INSERT INTO intern VALUES(5,
-                               'Melih', 
-                               'Doğrul', 
-                               'Yıldız Teknik University',
-                               'Computer Engineering', 
-                               3, 
-                               'Trabzon');
+INSERT INTO intern VALUES(
+  5,
+  'Melih', 
+  'Doğrul', 
+  'Yıldız Teknik University',
+  'Computer Engineering', 
+  3, 
+  'Trabzon'
+);
                                
-INSERT INTO intern VALUES(6,
-                               'Servet', 
-                               'Tartar', 
-                               'Munzur University', 
-                               'Computer Engineering', 
-                               4, 
-                               'Mersin');
+INSERT INTO intern VALUES(
+  6,
+  'Servet', 
+  'Tartar', 
+  'Munzur University', 
+  'Computer Engineering', 
+  4, 
+  'Mersin'
+);
                                
-INSERT INTO intern VALUES(7,
-                               'Yunus', 
-                               'Arslan', 
-                               'ODTU', 
-                               'Computer Education', 
-                               2, 
-                               'Antalya');
+INSERT INTO intern VALUES(
+  7,
+  'Yunus', 
+  'Arslan', 
+  'ODTU', 
+  'Computer Education', 
+  2, 
+  'Antalya'
+);
                                
-INSERT INTO intern VALUES(8,
-                               'Özge',
-                               'Koç', 
-                               'Trakya University', 
-                               'Computer Engineering', 
-                               4, 
-                               'Afyonkarahisar');
+INSERT INTO intern VALUES(
+  8,
+  'Özge',
+  'Koç', 
+  'Trakya University', 
+  'Computer Engineering', 
+  4, 
+  'Afyonkarahisar'
+);
                                
-INSERT INTO intern VALUES(9,
-                               'Ümit', 
-                               'Atılgan',
-                               'Yıldız Teknik University',
-                               'Maths Engineering',
-                               4,
-                               'Çorum');
+INSERT INTO intern VALUES(
+  9,
+  'Ümit', 
+  'Atılgan',
+  'Yıldız Teknik University',
+  'Maths Engineering',
+  4,
+  'Çorum'
+);
                                
-INSERT INTO intern VALUES(10,
-                               'Beytullah', 
-                               'Atik', 
-                               'Karabük University', 
-                               'Computer Engineering', 
-                               3 , 
-                               'Edirne');
+INSERT INTO intern VALUES(
+  10,
+  'Beytullah', 
+  'Atik', 
+  'Karabük University', 
+  'Computer Engineering', 
+  3 , 
+  'Edirne'
+);
                                
-INSERT INTO intern VALUES(11,
-                               'Davut', 
-                               'Kurt', 
-                               'İnönü University', 
-                               'Computer Engineering', 
-                               4, 
-                               'Malatya');
+INSERT INTO intern VALUES(
+  11,
+  'Davut', 
+  'Kurt', 
+  'İnönü University', 
+  'Computer Engineering', 
+  4, 
+  'Malatya'
+);
 
 SELECT * FROM intern;
