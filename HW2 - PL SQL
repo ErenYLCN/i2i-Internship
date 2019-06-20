@@ -10,10 +10,10 @@ END;
 
 CREATE OR REPLACE PROCEDURE show_university(f_name IN VARCHAR) 
 IS
-    fin varchar(50);
+    uni varchar(50);
 BEGIN 
-    SELECT university INTO fin FROM intern where first_name = f_name;
-    DBMS_OUTPUT.PUT_LINE(fin);
+    SELECT university INTO uni FROM intern where first_name = f_name;
+    DBMS_OUTPUT.PUT_LINE(uni);
 END;
 /
 
