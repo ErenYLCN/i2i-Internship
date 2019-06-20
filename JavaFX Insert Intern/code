@@ -1,0 +1,119 @@
+package prog;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class GetInfo extends Application {
+    public static void main(String[] args) {
+
+        launch(args);
+    }
+    
+    
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("TC Verification!");
+        
+        
+        //Setting Scene
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        Scene scene = new Scene(grid, 500, 500);
+        primaryStage.setScene(scene);
+        
+        ////////////////
+        
+        Text scenetitle = new Text("Fill in the Blanks");
+        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        grid.add(scenetitle, 0, 0, 2, 1);
+
+        Label first_name = new Label("First Name:");
+        grid.add(first_name, 0, 1);
+
+        TextField firstNameTextField = new TextField();
+        grid.add(firstNameTextField, 1, 1);
+
+        Label last_name = new Label("Last Name:");
+        grid.add(last_name, 0, 2);
+
+        TextField lastNameTextField = new TextField();
+        grid.add(lastNameTextField, 1, 2);
+        
+        Label university = new Label("University:");
+        grid.add(university, 0, 3);
+
+        TextField universityTextField = new TextField();
+        grid.add(universityTextField, 1, 3);
+        
+        Label department = new Label("Department:");
+        grid.add(department, 0, 4);
+
+        TextField departmentTextField = new TextField();
+        grid.add(departmentTextField, 1, 4);
+        
+        Label edu_year = new Label("Year of Education:");
+        grid.add(edu_year, 0, 5);
+
+        TextField eduYearTextField = new TextField();
+        grid.add(eduYearTextField, 1, 5);
+        
+        Label hometown = new Label("Hometown:");
+        grid.add(hometown, 0, 6);
+
+        TextField hometownTextField = new TextField();
+        grid.add(hometownTextField, 1, 6);
+        
+        Button btn = new Button("Create Account");
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+    	 
+            @Override
+            public void handle(ActionEvent event) {
+
+            	
+        	try{
+            	String fName = firstNameTextField.getText();
+            	String lName = lastNameTextField.getText();
+            	String uni = universityTextField.getText();
+            	String dep = departmentTextField.getText();
+            	String year = eduYearTextField.getText();
+            	String home = hometownTextField.getText();
+        		DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+      			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Temp123");
+      			Statement statement = conn.createStatement();
+      			int update = statement.executeUpdate("insert into intern values('"+fName+"','"+lName+"','"+uni+"','"+dep+"','"+year+"','"+home+"')");
+      			System.out.println("insert done");
+	      	}   catch(SQLException e){
+	      			e.printStackTrace();
+	      		}
+            }
+        });
+        HBox hbBtn = new HBox(10);
+        hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
+        hbBtn.getChildren().add(btn);
+        grid.add(hbBtn, 1, 7);
+
+        primaryStage.show();
+    }
+}
