@@ -1,3 +1,16 @@
 SELECT SUBSTR(PHONE_NUMBER, 1, 3) operator, 
        COUNT(SUBSTR(PHONE_NUMBER, 1, 3)) occurences 
 FROM EMPLOYEES GROUP BY SUBSTR(PHONE_NUMBER, 1, 3);
+
+
+SELECT SUM(DECODE(operator, 515, occurences)) "515",
+       SUM(DECODE(operator, 650, occurences)) "650",
+       SUM(DECODE(operator, 603, occurences)) "603",
+       SUM(DECODE(operator, 590, occurences)) "590",
+       SUM(DECODE(operator, 011, occurences)) "011" 
+FROM 
+    (SELECT SUBSTR(PHONE_NUMBER, 1, 3) operator, 
+            COUNT(SUBSTR(PHONE_NUMBER, 1, 3)) occurences 
+            FROM EMPLOYEES 
+            GROUP BY SUBSTR(PHONE_NUMBER, 1, 3)
+    );
