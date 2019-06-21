@@ -1,0 +1,10 @@
+DECLARE
+    num number;
+BEGIN
+    number:=0;
+    loop
+        dbms_output.put_line (NUM1||',');
+        num := num + 2;
+        exit when num = 22;
+    end loop;
+end;
