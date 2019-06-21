@@ -1,0 +1,29 @@
+CREATE OR REPLACE PROCEDURE arrange(input_str IN VARCHAR)
+IS
+    i number;
+BEGIN
+    i := 1;
+    LOOP
+        DBMS_OUTPUT.PUT_LINE('Name - Surname = ' 
+                             ||
+                             INITCAP(
+                                 SUBSTR(input_str, 
+                                        INSTR(input_str, ':', i, 1) + 1, 
+                                        INSTR(input_str, ',', i, 1) - INSTR(input_str, ':', i, 1) - 1)
+                             )           
+                             ||
+                             '   '
+                             ||
+                             INITCAP(
+                                 SUBSTR(input_str, 
+                                        INSTR(input_str, ':', i, 2) + 1, 
+                                        INSTR(input_str, '.', i, 1) - INSTR(input_str, ':', i, 2) - 1)
+                                 )       
+                             );
+        i := INSTR(input_str, '.', i, 1) + 1;
+        EXIT WHEN i = LENGTH(input_str) + 1;
+    END LOOP;
+END;
+/
+
+EXEC arrange('Name1:ERMAN, Surname1:İbriŞiM. Name2:MUstAFA, Surname2:Demir. Name3:İzgİ, Surname1:özbay.');
