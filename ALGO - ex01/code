@@ -1,0 +1,34 @@
+	static boolean isPartOf(int n, int[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			if (n == arr[i])
+				return true;
+		}
+		return false;
+	}
+	static void printMultipleOccurences(int[] arr) {
+		
+		int resultCnt = 0;
+		int[] result = new int[arr.length/2];
+		int[] recorded = new int[arr.length];
+		
+		for (int i = 0; i < arr.length; i++) {
+			
+			if (!isPartOf(arr[i], result)) {
+				if (isPartOf(arr[i], recorded)) {
+					result[resultCnt++] = arr[i];
+				} else {
+					recorded[i] = arr[i];
+				}
+				
+			}
+		}
+		if (resultCnt == 0) {
+			System.out.print("YOK");
+		} else {
+			for (int i = 0; i < result.length; i++) {
+				if (result[i] != 0)
+					System.out.print(result[i] + " ");
+			}
+		}
+		System.out.println(" ");
+	}
