@@ -1,0 +1,23 @@
+package hw;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class testing {
+
+	@Test
+	public void test() {
+		Question test = new Question();
+		
+		String output1=test.printPrimes(10);
+		assertEquals("2 3 5 7 ",output1);
+		
+		//String output2=test.printPrimes(15);
+		//assertEquals("2 3 5 10 ",output2);
+		
+		//String output3=test.printPrimes(20);
+		//assertEquals("2 3 5 7 11 13 17 19 ",output3);
+	}
+
+}
