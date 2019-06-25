@@ -1,0 +1,12 @@
+CREATE OR REPLACE PROCEDURE p_make_triangle (height IN NUMBER)
+IS
+BEGIN
+  dbms_output.put_line('height = '|| height );
+  FOR i IN 1..height LOOP
+     dbms_output.put_line(RPAD(' ', height - i) || RPAD('*', i * 2 - 1, '*') || RPAD(' ', height - i));
+  END LOOP;
+END;
+
+/
+
+EXEC p_make_triangle(10);
