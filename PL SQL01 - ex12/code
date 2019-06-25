@@ -1,0 +1,24 @@
+CREATE OR REPLACE PROCEDURE max_salary_stats(SALARY IN number, d_turkish_lira OUT number)
+IS
+BEGIN
+SELECT * FROM (
+  SELECT EMPLOYEE_ID, 
+         FIRST_NAME,
+         LAST NAME,
+         SALARY, 
+         row_number() over (order by salary desc) rn 
+  FROM EMPLOYEES e
+)
+where rn = 1; 
+END;
+
+/
+DECLARE
+  d_salary number:=maxsalary;
+  d_turkish_lira number:=maxsalary*5; 
+BEGIN
+  max_salary_stats(d_salary, d_turkish_lira);
+  dbms_output.put_line('Turkish Lira version is'||d_turkish_lira);
+END;
+
+/
