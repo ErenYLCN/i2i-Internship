@@ -1,24 +1,28 @@
-CREATE OR REPLACE PROCEDURE max_salary_stats(SALARY IN number, d_turkish_lira OUT number)
-IS
-BEGIN
-SELECT * FROM (
-  SELECT EMPLOYEE_ID, 
-         FIRST_NAME,
-         LAST NAME,
-         SALARY, 
-         row_number() over (order by salary desc) rn 
-  FROM EMPLOYEES e
-)
-where rn = 1; 
-END;
 
-/
-DECLARE
-  d_salary number:=maxsalary;
-  d_turkish_lira number:=maxsalary*5; 
+CREATE OR REPLACE PROCEDURE max_salary_stats(pso_name OUT HR.EMPLOYEES.FIRST_NAME%TYPE,
+                                             pio_salary OUT HR.EMPLOYEES.SALARY%TYPE) IS
+    dollar number := 5.77;
 BEGIN
-  max_salary_stats(d_salary, d_turkish_lira);
-  dbms_output.put_line('Turkish Lira version is'||d_turkish_lira);
+    
+    SELECT 
+        FIRST_NAME, SALARY 
+    INTO
+        pso_name,pio_salary
+    FROM 
+        HR.EMPLOYEES 
+    WHERE 
+        SALARY = (SELECT MAX(SALARY) FROM HR.EMPLOYEES);
+    DBMS_OUTPUT.PUT_LINE('Name of the richest employee-> ' || pso_name);
+    DBMS_OUTPUT.PUT_LINE('Salary in TL-> ' || pio_salary);
+    DBMS_OUTPUT.PUT_LINE('Salary in dollars-> ' || pio_salary/dollar);
+END;
+/
+
+DECLARE
+    f_name HR.EMPLOYEES.FIRST_NAME%TYPE;
+    emp_sal HR.EMPLOYEES.SALARY%TYPE;
+BEGIN
+    max_salary_stats(f_name, emp_sal);
 END;
 
 /
