@@ -1,0 +1,40 @@
+1. Geliştirilen projenin/yapılan işin kalitesinden kim sorumludur?
+  -Tüm takım soruludur
+
+2. Testçinin sorumlulukları nelerdir?
+  -Developer bakış açısına ve teknik bilgisine sahip
+  -Analist gözlüğü ile sorgulayıcı ve geniş açıdan bakabilecek kadar business bilgisine sahip
+  -Operasyon süreçlerini kavrayabilecek kadar iş akışını bilen ne nerede olmalı takibini yapabilen
+  -Projenin kalitesinden sorumlu olmayan kişidir
+  -Testin amacını bilir ve tanımlar
+  -Keşifsel test yapar
+  -Script testing ile farklı yöntemler bilir
+  -Ne zaman hangi testi yapıcağını bilir
+
+3. Klasik methodolojiler ve agile methodolojisi göz önünde bulundurulduğunda test
+süreçlerinde ne gibi farklılıklar vardır?
+  -Klasik methodolojiye baktığımızda daha salt(sade)giriş gelişme sonuç odaklıdır.
+  -Agile methodolojisi daha fonksiyonel daha detaycı bir süreçten geçer.
+
+
+4. Agile test sürecinin klasik test sürecine göre avantajları/dezavantajları nelerdir?
+  -Avantajları:Esnek,bilgiye dayalı,sonuç odaklı,hızlı,öğretici
+  -Dezavantajları:Ayrıntılı değil,süreç odaklı değil,planda esnek olması
+  
+5. Agile projelerde test sürecinde sağlanan en önemli faydalardan ilk 3 tanesi nelerdir? (güncel
+verilere göre)
+  -Maksimum kalite,hata çok hızlı bir şekilde farkedilir,hızlı iş teslimi
+
+6. Agile test sürecinde dökümantasyonda yer alması gereken en önemli başlıklar/dökümanlar
+nelerdir? En az 4 tane örnek veriniz.
+  -Başlangıç ve Analizler
+  -Eğitimler
+  -Pilot Yürütme
+  -Kurumsal Dönüşüm
+
+7. Test otomasyon tool’ları hangi durumlarda fayda sağlar? Bu tool’lara kullanım alanlarıyla
+beraber 2-3 örnek veriniz.
+  -Unit Test toolları: (Nunit,MBUnit,Junit,Xunit,etc.)
+  -APL otomasyon toolları: (RestAssured,PostMan,SoapUI,Karate,etc.)
+  -GUI otomasyon toolları: Selenium,Capybara,Cucumber,RoborFramework,commercial ürünler
+  -Görsel otomasyon toolları:ImageMagick,ApplitoolsEyes,Galen Framework,PhontomCSS, ETC.
