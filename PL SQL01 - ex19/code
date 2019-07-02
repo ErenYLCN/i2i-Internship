@@ -1,0 +1,26 @@
+CREATE OR REPLACE PACKAGE all_employees IS
+    PROCEDURE print_names;
+END all_employees;
+/
+CREATE OR REPLACE PACKAGE BODY all_employees AS
+  PROCEDURE print_names IS
+  CURSOR all_emp IS SELECT FIRST_NAME FROM HR.EMPLOYEES ORDER BY employee_id;
+  f_name varchar(30);
+  BEGIN
+    OPEN all_emp;
+    LOOP
+    FETCH all_emp INTO f_name;
+     DBMS_OUTPUT.PUT_LINE(f_name);
+    EXIT WHEN all_emp%notfound; 
+    END LOOP;
+    CLOSE all_emp;
+  END print_names;
+END all_employees;
+/
+
+BEGIN
+    all_employees.print_names;
+END;
+
+/
+    
