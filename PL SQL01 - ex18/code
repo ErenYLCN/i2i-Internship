@@ -1,0 +1,21 @@
+CREATE OR REPLACE PACKAGE first_employee IS
+    PROCEDURE get_name;
+END first_employee;
+/
+CREATE OR REPLACE PACKAGE BODY first_employee AS
+  PROCEDURE get_name IS
+  emp_name varchar(30);
+  BEGIN
+    SELECT FIRST_NAME INTO emp_name FROM HR.EMPLOYEES
+    WHERE EMPLOYEE_ID = (SELECT MIN(EMPLOYEE_ID) FROM HR.EMPLOYEES);
+    DBMS_OUTPUT.PUT_LINE
+      (emp_name);
+  END get_name;
+END first_employee;
+/
+
+BEGIN
+    first_employee.get_name;
+END;
+
+/
