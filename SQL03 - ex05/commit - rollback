@@ -1,0 +1,4 @@
+ORACLE’da yaptığımız bütün bu  işlemlerin hatalı olduğunu düşünelim ve hepsini iptal edelim :   
+ROLLBACK;
+Veya ORACLE’da bu işlemlerin doğru yapıldığını düşünelim ve işlemleri kalıcı hale getirip herkesin görmesini sağlamak için şu komutu çalıştıralım :   
+COMMIT;
